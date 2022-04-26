@@ -1,0 +1,12 @@
+<div class="row mt-3">
+    <p>Pais seleccionado actualmente: {{paisSeleccionado}} </p>
+    <div class="col-2 " *ngFor="let pais of paises" (click)="cambiarPais(pais)">
+        <button class=" pais-container text-center rounded p-1 w-100">{{pais}}</button>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <app-buscador [pais]="paisSeleccionado"></app-buscador>
+    </div>
+</div>
