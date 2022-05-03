@@ -1,0 +1,49 @@
+{
+  "usuarios": [
+    {
+      "usuario": "Paco100000000000000000000",
+      "contraseña": "12345678",
+      "correo": "paco100@test.com",
+      "ofertas": true,
+      "pais": "Guyana",
+      "ciudad": "Napoles",
+      "id": "3boUwkjpppGj"
+    },
+    {
+      "usuario": "Pac2019389909",
+      "contraseña": "12345678",
+      "correo": "paco200@test.com",
+      "ofertas": true,
+      "pais": "Timor-Leste",
+      "ciudad": "Bruselas",
+      "id": "3boUkjhwGj"
+    },
+    {
+      "usuario": "Paco500000000",
+      "contraseña": "12345678",
+      "correo": "paco200@test.com",
+      "ofertas": false,
+      "pais": "Benin",
+      "ciudad": "Bruselas",
+      "id": "3boUwGj"
+    },
+    {
+      "usuario": "Paco40000000000",
+      "contraseña": "ppsakdpaosk",
+      "correo": "paco400@gmail.com",
+      "ofertas": true,
+      "pais": "Timor-Leste",
+      "ciudad": "Jaen",
+      "id": "tcfoOUK"
+    },
+    {
+      "usuario": "Ruben009",
+      "contraseña": "ruben009009",
+      "correo": "ruben009@test.com",
+      "ofertas": true,
+      "pais": "Mongolia",
+      "ciudad": "Mongolia",
+      "id": "Yjaccaj"
+    }
+  ]
+}

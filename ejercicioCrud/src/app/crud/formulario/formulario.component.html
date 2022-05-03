@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-4">
+
+        <div class="title-container m-2">
+            <h5>Formulario de Registro</h5>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+
+                <form [formGroup]="miFormulario">
+                    <div class="element-container mt-3">
+                        <label for="text" class="form-label"> Usuario</label>
+                        <input autocomplete="off" formControlName="usuario" class="form form-control sm-3 md-9" type="text" name="usuario" placeholder="Usuario...">
+                        <span class="alert-danger mt-2" *ngIf="validarCampo('usuario')"> El usuario debe tener 6 dígitos </span>
+                    </div>
+
+                    <div class="element-container mt-3">
+                        <label for="text" class="form-label"> Contraseña</label>
+                        <input formControlName="contraseña" class="form form-control sm-3 md-9" type="password" name="contrseña" placeholder="Contraseña...">
+                        <span class="alert-danger mt-2" *ngIf="validarCampo('contraseña')"> La contraseña debe tener 8 dígitos </span>
+                    </div>
+
+                    <div class="element-container mt-3">
+                        <label for="text" class="form-label"> Correo</label>
+                        <input formControlName="correo" class="form form-control sm-3 md-9" type="email" name="correo" placeholder="Correo...">
+                        <span class="alert-danger mt-2" *ngIf="validarCampo('correo')"> Debe introducir un correo con formato válido </span>
+                    </div>
+
+                    <div class="element-container mt-3">
+                        <div class="row">
+                            <div class="col-2">
+                                <input formControlName="ofertas" class="" type="checkbox" name="ofertas">
+                            </div>
+                            <div class="col-auto">
+                                <label for="text" class="form-label"> Enviame ofertas promocionales</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-container mt-3">
+                        <label for="pais" class="form-label"> País</label>
+                        <select placeholder="Seleccione un pais" formControlName="pais" class="form-control" id="pais">
+                           <option >Seleccione un pais... </option>
+                            <option *ngFor="let pais of paises"> {{pais.name.common}} </option>
+                        </select>
+                        <span class="alert-danger mt-2" *ngIf="validarCampo('pais')"> Seleccione un pais válido </span>
+                    </div>
+
+                    <div class="element-container mt-3">
+                        <label for="text" class="form-label"> Ciudad</label>
+                        <input formControlName="ciudad" class="form form-control sm-3 md-9" type="text" name="ciudad" placeholder="Ciudad...">
+                        <span class="alert-danger mt-2" *ngIf="validarCampo('ciudad')"> El campo ciudad no puede ser vacío </span>
+
+                    </div>
+
+                    <div class="element-container mt-3">
+                        <button (click)="guardar()" class="btn btn-primary">Crear</button>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <app-listado (usuario)="editarUsuario($event)" [usuarios]="usuarios"></app-listado>
+    </div>
+</div>

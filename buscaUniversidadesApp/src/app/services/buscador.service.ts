@@ -9,7 +9,6 @@ import { Universidad } from '../interfaces/universidad.interface';
 export class BuscadorService {
 
   constructor(private http: HttpClient) { }
-
   getUniversidades(pais: string): Observable<Universidad[]> {
     return this.http.get<Universidad[]>(`http://universities.hipolabs.com/search?country=${pais}`);
   }

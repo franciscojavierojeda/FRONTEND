@@ -1,4 +1,4 @@
 export interface Universidad{
-    country:string;
     name:string;
+    country:string;
 }
