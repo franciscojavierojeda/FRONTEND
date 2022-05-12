@@ -1,0 +1,36 @@
+.rojo {
+    background-color: red;
+    box-shadow: 0px 0px 20px 10px red;
+}
+
+.amarillo {
+    background-color: yellow;
+    box-shadow: 0px 0px 20px 10px yellow;
+}
+
+.verde {
+    background-color: rgb(126, 218, 34);
+    box-shadow: 0px 0px 20px 10px rgb(126, 218, 34);
+}
+
+.semaforo-container {
+    margin-top: 10px;
+    width: 200px;
+    height: 300px;
+    border: 3px solid #555;
+}
+
+.circulo {
+    width: 80px;
+    height: 80px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 40px;
+    border-radius: 50%;
+    border: 3px solid #555
+}
+
+.apagado {
+    background: #D8D8D8;
+}
