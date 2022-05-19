@@ -26,9 +26,6 @@ export class ParentComponent implements OnInit {
   mensaje:string="";
   mensajeHijo:string="";
 
-  obsHijo: BehaviorSubject<string>=new BehaviorSubject('Mensaje del Hijo usando Observable');
-
-
   ngOnInit(): void {
   }
 
@@ -45,10 +42,8 @@ export class ParentComponent implements OnInit {
   }
 
   mensajeObservable(){
-   this.obsHijo
-   .subscribe(valor =>{
-     this.mensajeHijo=valor;
-   })
+  
+    this.mensajeHijo=this.msgService.mensajeObservableAHijo();
   }
 
 }

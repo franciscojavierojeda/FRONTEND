@@ -46,7 +46,7 @@ export class FormularioComponent implements OnInit {
 
   paises:Country[]=[]
   ngOnInit(): void {
-
+    console.log(this.miFormulario)
     this.usuarioService.getUsuarios()
     .subscribe(usuarios=>{
       this.usuarios=usuarios;

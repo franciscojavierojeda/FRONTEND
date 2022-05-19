@@ -26,7 +26,6 @@ export class ChildComponent implements OnInit {
   @Output()
   msgOutput: EventEmitter<string> = new EventEmitter();
 
-  obsPadre: BehaviorSubject<string> = new BehaviorSubject('Mensaje del Padre usando el servicio');
 
   mensajeServicioHijo() {
     this.msgOutput.emit(this.msgService.mensajeServicioPadre());
@@ -41,10 +40,8 @@ export class ChildComponent implements OnInit {
 
   observableHijo() {
 
-    this.obsPadre
-      .subscribe(value => {
-        this.msgOutput.emit(value);
-      })
+    let obsHijo:string=this.msgService.mensajeObservableAPadre();
+    this.msgOutput.emit(obsHijo);
   }
 
 }
