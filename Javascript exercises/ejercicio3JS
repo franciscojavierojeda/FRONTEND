@@ -1,15 +1,17 @@
+//Ejercicio 3
+console.log('Ejercicio 3');
 
-//Ejercicio 4 
-console.log('Ejercicio 4');
+const arrCities = [
+  {city: 'Logroño', country: 'Spain', capital: false},
+  {city: 'Paris', country: 'France', capital: true},
+  {city: 'Madrid', country: 'Spain', capital: true},
+  {city: 'Rome', country: 'Italy', capital: true},
+  {city: 'Oslo', country: 'Norway', capital: true},
+  {city: 'Jaén', country: 'Spain', capital: false}
+]
 
-const arrNumber1 = [1,2,3];
-const arrNumber2 = [1,2,3,4,5];
-const arrNumber3 = [1,4,7,2];
-
-let arrMerged=[arrNumber1,arrNumber2,arrNumber3]
-
-const intersection= arrMerged.reduce((a,arr) =>(
-a.filter(num=> arr.includes(num))
-))
-
-console.log(intersection);
+for(var index in arrCities){
+  if(arrCities[index].capital===false){
+        console.log(arrCities[index].city)
+  }
+}
