@@ -1,0 +1,16 @@
+//Ejercicio 7
+console.log('Ejercicio 7');
+
+function returnFalsyValues(arrElements, typeElement){
+  
+  for(var values in arrElements){
+    if(typeElement(arrElements[values])){
+      delete arrElements[values];
+    }
+  }
+  return arrElements
+}
+
+const falsyValues = returnFalsyValues({ a: 1, b: '2', c: 3 }, x => typeof x === 'string')
+ 
+console.log(falsyValues); // {a: 1, c: 3}

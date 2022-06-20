@@ -1,0 +1,30 @@
+//Ejercicio 8
+console.log('Ejercicio 8')
+
+const byteResult=convertBytes(10045);
+console.log(byteResult);
+
+function convertBytes(numberBytes,truncateNumber){
+  let isUnderByte=false;
+  const bytes=1024;
+  let iterations=0;
+  while(!isUnderByte){
+    if(numberBytes>=bytes){
+      numberBytes=numberBytes/bytes;
+      iterations=iterations+1;
+    }
+    else{
+      isUnderByte=true;
+    }
+  }
+  if(truncateNumber===undefined){
+    truncateNumber=3;
+  }
+ numberBytes= numberBytes.toPrecision(truncateNumber);
+  
+  
+	const byteType = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  let concat= numberBytes + byteType[iterations];
+  return concat;
+  
+}

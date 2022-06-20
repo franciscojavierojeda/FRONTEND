@@ -1,0 +1,187 @@
+//Ejercicio 1
+console.log('Ejercicio 1');
+
+const elementos=[
+	{id: 1, name: 'Pepe'},
+  {id: 2, name: 'Juan'},
+  {id: 3, name: 'Alba'},
+  {id: 4, name: 'Toby'},
+  {id: 5, name: 'Lala'}
+]
+let getId=3;
+
+console.log(elementos[getId-1].name);
+
+//Ejercicio 2
+console.log('Ejercicio 2');
+
+const arrDirty = [NaN, 0, 5, false, -1, '',undefined, 3, null, 'test']
+
+arrTruthy= arrDirty.filter(Boolean);
+
+//Ejercicio 3
+console.log('Ejercicio 3');
+
+const arrCities = [
+  {city: 'Logroño', country: 'Spain', capital: false},
+  {city: 'Paris', country: 'France', capital: true},
+  {city: 'Madrid', country: 'Spain', capital: true},
+  {city: 'Rome', country: 'Italy', capital: true},
+  {city: 'Oslo', country: 'Norway', capital: true},
+  {city: 'Jaén', country: 'Spain', capital: false}
+]
+
+for(var index in arrCities){
+  if(arrCities[index].capital===false){
+        console.log(arrCities[index].city)
+  }
+}
+
+//Ejercicio 4 
+console.log('Ejercicio 4');
+
+const arrNumber1 = [1,2,3];
+const arrNumber2 = [1,2,3,4,5];
+const arrNumber3 = [1,4,7,2];
+
+let arrMerged=[arrNumber1,arrNumber2,arrNumber3]
+
+const intersection= arrMerged.reduce((a,arr) =>(
+a.filter(num=> arr.includes(num))
+))
+
+console.log(intersection);
+
+//Ejercicio 5
+console.log('Ejercicio 5');
+
+const arrCities2 = [
+  {city: 'Logroño', country: 'Spain', capital: false},
+  {city: 'Bordeaux', country: 'France', capital: false},
+  {city: 'Madrid', country: 'Spain', capital: true},
+  {city: 'Florence', country: 'Italy', capital: true},
+  {city: 'Oslo', country: 'Norway', capital: true},
+  {city: 'Jaén', country: 'Spain', capital: false}
+]
+arrNoCapital=[]
+
+for (var i=0;i<arrCities2.length;i++){
+  if(arrCities2[i].capital===false){
+    let isSpain=false;
+    if(arrCities2[i].country==='Spain'){
+      isSpain=true;
+    }
+    arrNoCapital.push(
+      {'city':arrCities2[i].city,
+       'isSpain':isSpain
+      }     
+    )
+  }
+}
+console.log(arrNoCapital)
+
+//Ejercicio 6
+console.log('Ejercicio 6');
+
+function roundTo(number,decimals){
+  number=number.toFixed(decimals);
+  return number;
+}
+const roundedResult = roundTo(2.123092384,6 );
+console.log(roundedResult);
+
+
+//Ejercicio 7,
+console.log('Ejercicio 7');
+
+function returnFalsyValues(arrElements, typeElement){
+  
+  for(var values in arrElements){
+    if(typeElement(arrElements[values])){
+      delete arrElements[values];
+    }
+  }
+  return arrElements
+}
+
+const falsyValues = returnFalsyValues({ a: 1, b: '2', c: 3 }, x => typeof x === 'string')
+ 
+console.log(falsyValues); // {a: 1, c: 3}
+
+//Ejercicio 8
+console.log('Ejercicio 8')
+
+const byteResult=convertBytes(10045);
+console.log(byteResult);
+
+function convertBytes(numberBytes,truncateNumber){
+  let isUnderByte=false;
+  const bytes=1024;
+  let iterations=0;
+  while(!isUnderByte){
+    if(numberBytes>=bytes){
+      numberBytes=numberBytes/bytes;
+      iterations=iterations+1;
+    }
+    else{
+      isUnderByte=true;
+    }
+  }
+  if(truncateNumber===undefined){
+    truncateNumber=3;
+  }
+ numberBytes= numberBytes.toPrecision(truncateNumber);
+  
+  
+	const byteType = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  let concat= numberBytes + byteType[iterations];
+  return concat;
+  
+}
+
+//Ejercicio 9
+console.log('Ejercicio 9');
+
+function toLowercaseKeys(object){
+  let mapObject=Object.entries(object);
+  let convertKeys=mapObject.map(function(convert){
+    convert[0]=convert[0].toLowerCase();
+  })
+  	return Object.fromEntries(mapObject);
+}
+const myObject = { NamE: 'Charles', ADDress: 'Home Street' };
+
+let myObjLowercase = toLowercaseKeys(myObject);
+console.log(myObjLowercase);
+
+//Ejercicio 10
+console.log('Ejercicio 10');
+
+function removeHTMLTags(html){
+	return html.replace( /(<([^>]+)>)/ig, '');
+}
+
+const result = removeHTMLTags('<div><span>Lorem</span> <strong>ipsum</strong></div>');
+console.log(result);
+
+//Ejercicio 11
+console.log('Ejercicio 11');
+
+
+const splitResult = splitArrayIntoChunks([1, 2, 3, 4, 5, 6, 7], 3);
+
+function splitArrayIntoChunks( arrSplit,divisions ){
+  let arrResult=[]
+  for(var i=0;i<arrSplit.length;i+=divisions){
+      arrResult.push(arrSplit.slice(i,i+divisions));
+  }
+  return arrResult;
+}
+console.log(splitResult);
+
+
+
+
+
+
+

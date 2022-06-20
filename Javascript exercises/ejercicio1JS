@@ -1,0 +1,14 @@
+//Ejercicio 1
+console.log('Ejercicio 1');
+
+const elementos=[
+	{id: 1, name: 'Pepe'},
+  {id: 2, name: 'Juan'},
+  {id: 3, name: 'Alba'},
+  {id: 4, name: 'Toby'},
+  {id: 5, name: 'Lala'}
+]
+let getId=3;
+
+console.log(elementos[getId-1].name);
+

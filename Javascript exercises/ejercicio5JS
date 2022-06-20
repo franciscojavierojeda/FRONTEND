@@ -1,0 +1,27 @@
+//Ejercicio 5
+console.log('Ejercicio 5');
+
+const arrCities2 = [
+  {city: 'Logroño', country: 'Spain', capital: false},
+  {city: 'Bordeaux', country: 'France', capital: false},
+  {city: 'Madrid', country: 'Spain', capital: true},
+  {city: 'Florence', country: 'Italy', capital: true},
+  {city: 'Oslo', country: 'Norway', capital: true},
+  {city: 'Jaén', country: 'Spain', capital: false}
+]
+let arrNoCapital=[]
+
+for (var i=0;i<arrCities2.length;i++){
+  if(arrCities2[i].capital===false){
+    let isSpain=false;
+    if(arrCities2[i].country==='Spain'){
+      isSpain=true;
+    }
+    arrNoCapital.push(
+      {'city':arrCities2[i].city,
+       'isSpain':isSpain
+      }     
+    )
+  }
+}
+console.log(arrNoCapital)

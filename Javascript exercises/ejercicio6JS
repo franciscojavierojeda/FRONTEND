@@ -1,0 +1,11 @@
+
+//Ejercicio 6
+console.log('Ejercicio 6');
+
+function roundTo(number,decimals){
+  number=number.toFixed(decimals);
+  return number;
+}
+const roundedResult = roundTo(2.123092384,6 );
+console.log(roundedResult);
+

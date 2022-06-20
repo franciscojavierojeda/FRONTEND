@@ -1,0 +1,14 @@
+//Ejercicio 9
+console.log('Ejercicio 9');
+
+function toLowercaseKeys(object){
+  let mapObject=Object.entries(object);
+  let convertKeys=mapObject.map(function(convert){
+    convert[0]=convert[0].toLowerCase();
+  })
+  	return Object.fromEntries(mapObject);
+}
+const myObject = { NamE: 'Charles', ADDress: 'Home Street' };
+
+let myObjLowercase = toLowercaseKeys(myObject);
+console.log(myObjLowercase);
