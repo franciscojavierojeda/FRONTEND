@@ -1,13 +1,18 @@
 //Ejercicio 8
 console.log('Ejercicio 8')
 
-const byteResult=convertBytes(10045);
+const byteResult=convertBytes(-10045);
 console.log(byteResult);
 
 function convertBytes(numberBytes,truncateNumber){
   let isUnderByte=false;
+  let isNegative=false;
   const bytes=1024;
   let iterations=0;
+  if(numberBytes<0){
+    isNegative=true;
+    numberBytes= -numberBytes;
+  }
   while(!isUnderByte){
     if(numberBytes>=bytes){
       numberBytes=numberBytes/bytes;
@@ -24,6 +29,8 @@ function convertBytes(numberBytes,truncateNumber){
   
   
 	const byteType = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  if(isNegative)
+    numberBytes=-numberBytes;
   let concat= numberBytes + byteType[iterations];
   return concat;
   
