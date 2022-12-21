@@ -2,7 +2,7 @@ import { Input } from '@angular/core';
 import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { debounceTime, Subject } from 'rxjs';
-import { Universidad } from '../../interfaces/universidad.interface';
+import { League } from '../../interfaces/universidad.interface';
 import { BuscadorService } from '../../services/buscador.service';
 
 @Component({
@@ -21,13 +21,13 @@ import { BuscadorService } from '../../services/buscador.service';
 })
 export class BuscadorComponent implements OnInit {
 
-  constructor(private buscadorService:BuscadorService) { }
+  constructor(private buscadorService: BuscadorService) { }
 
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
 
-  @Input() pais:string='Spain';
+  @Input() pais: string = 'Spain';
 
-  @Input() universidades:Universidad[]=[];
+  @Input() leagues: League[] = [];
 
   termino: string = '';
   debouncer: Subject<string> = new Subject();
@@ -37,14 +37,23 @@ export class BuscadorComponent implements OnInit {
   ngOnInit(): void {
 
     this.debouncer
-    .pipe(
-      debounceTime(300)
-    )
-    .subscribe(valor=> {
-      this.onDebounce.emit(valor);
-    })
-    
-   
+      .pipe(
+        debounceTime(300)
+      )
+      .subscribe(valor => {
+        this.onDebounce.emit(valor);
+      })
+
+    this.buscadorService.getAllLeagues()
+      .subscribe((leagues: any) => {
+
+        this.leagues = leagues.leagues;
+        this.leagues.forEach((league: any, index) => {
+        });
+        // console.log(leagues)
+      })
+
+
   }
 
   presionaTecla() {
@@ -52,16 +61,12 @@ export class BuscadorComponent implements OnInit {
     this.sugerencias(this.termino)
   }
 
-  sugerencias(termino:string){
-    this.termino=termino;
-    if(termino===""){
-      this.universidades=[];
+  sugerencias(termino: string) {
+    this.termino = termino;
+    if (termino === "") {
+      this.leagues = [];
     }
-    this.buscadorService.getUniversidadesSugeridas(this.pais,termino)
-    .subscribe(unis=>{
-      this.universidades=unis;
-      console.log(unis)
-    })
+
   }
 
 

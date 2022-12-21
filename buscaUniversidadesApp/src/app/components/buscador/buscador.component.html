@@ -1,9 +1,9 @@
 <form action="" autocomplete="off">
-    <input class="form-control mt-2" name="termino" placeholder="Universidad..." [(ngModel)]="termino" type="text" (input)="presionaTecla()">
+    <input class="form-control mt-2" name="termino" placeholder="Liga..." type="text" (input)="presionaTecla()">
 
     <ul class="list-group">
-        <li *ngFor="let uni of universidades" class="list-group-item">
-            {{uni.name}}
+        <li *ngFor="let league of leagues; let i = index" class="list-group-item">
+            {{league.strLeague}}
         </li>
     </ul>
 

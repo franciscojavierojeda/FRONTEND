@@ -1,0 +1,14 @@
+<div class="row mt-3">
+    <p>Pais seleccionado actualmente: {{paisSeleccionado}} </p>
+    <div class="col-2 league-container" *ngFor="let league of leagues;let i=index"  (click)="cambiarPais(league)">
+        <button *ngIf="i<11" class=" button-container text-center rounded p-1 w-100">
+            <img class="image-button" [src]="switchImage(league.idLeague)" alt="">
+    {{league.strLeague}}</button>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <app-buscador></app-buscador>
+    </div>
+</div>

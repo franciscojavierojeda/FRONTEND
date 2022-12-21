@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Universidad } from '../interfaces/universidad.interface';
+import { League } from '../interfaces/universidad.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,11 @@ import { Universidad } from '../interfaces/universidad.interface';
 export class BuscadorService {
 
   constructor(private http: HttpClient) { }
-  getUniversidades(pais: string): Observable<Universidad[]> {
-    return this.http.get<Universidad[]>(`http://universities.hipolabs.com/search?country=${pais}`);
+  getAllLeagues(): Observable<League[]> {
+    return this.http.get<any[]>(`https://www.thesportsdb.com/api/v1/json/2/all_leagues.php?s=Soccer`);
   }
 
-  getUniversidadesSugeridas(pais: string, name:string): Observable<Universidad[]> {
-    return this.http.get<Universidad[]>(`http://universities.hipolabs.com/search?country=${pais}&name=${name}`);
+  getUniversidadesSugeridas(pais: string, name: string): Observable<League[]> {
+    return this.http.get<any[]>(`https://www.thesportsdb.com/api/v1/json/2/all_leagues.php?c=${pais}`);
   }
 }

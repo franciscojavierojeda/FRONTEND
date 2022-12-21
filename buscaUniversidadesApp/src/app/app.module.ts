@@ -6,19 +6,22 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
-import { PaisComponent } from './components/pais/pais.component';
+import { CommonModule } from '@angular/common';
+import { LeagueComponent } from './components/pais/league.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuscadorComponent,
-    PaisComponent
+    LeagueComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

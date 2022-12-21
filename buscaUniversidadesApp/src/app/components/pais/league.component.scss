@@ -1,0 +1,30 @@
+
+.league-container{
+    margin-bottom: 10px;
+    transition-property: opacity, left;
+  transition-duration: 3s, 5s, 2s, 1s;
+}
+
+.image-button{
+    width: 35%;
+}
+.button-container{
+    cursor:pointer;
+    width: 40%;
+    font-weight: bold;
+    margin: 0 auto;
+    transition: width .5s;
+    font-family: 'Anton', sans-serif;
+    background-color: #99DB81;
+    color: #00146D;
+  }
+  
+  .button-container:hover{
+    width: 110% !important;
+    background-color: #84C642;
+  }
+
+  .button-container:focus {
+    background-color: #84C642;
+  }
+  
